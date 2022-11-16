@@ -1,0 +1,58 @@
+1)admin panel is powerful
+2)always do two things
+		1)python manage.py makemigratioos
+		2)python manage.py migrate
+
+3)create admin user
+python manage.py createsuperuser
+
+
+Django cors Header
+needed when sending lots of requests to postman and stuff.
+
+4) create app in django 
+   django-admin startapp {appname}
+
+in our app we have a category app 
+in which we gonna use this
+1)create model
+2)register in admin
+3)serializer.py file to serialize data in json (so that we can give to react.js)
+4)views to get all category
+5)setup url
+
+1)CREATE MODEL
+==>create class 
+create varibale = models.charfield(max_lenth=50)
+
+2)in the api folder we have created the category and in the catergory there is apps.py file(api/catogory/apps.py)
+in which we have to register the category app
+
+like this.
+
+from django.apps import AppConfig
+
+class CategoryConfig(AppConfig):
+    name ='api.category'
+
+then this has to be add in the installed apps
+['api.category']
+
+3)serializer : 
+will import serializer from django.rest.framework
+and add name , and description as varibale inside the class
+
+from rest_framework import serializers
+from .models import Category
+
+#serializer.py file to serialize data in JSON
+class CategorySerializer(serializers.Serializer):
+    class Meta:
+        model = Category
+        field = ('name','description')
+
+
+4) view to get all category
+#this view set it to show or push all the categoryies we have in the model
+
+

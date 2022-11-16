@@ -1,0 +1,21 @@
+step1)
+Create model based on existing model
+why we do it becasue if we want some addintional inputs from the user while signing in 
+like asking for phone.no. country code address etc we can do it using the custom user model. and not by default one
+
+core python
+setattr(object,"variable that value is stored",NEW-value)
+
+class MAN:
+	name="koshi"
+
+obj=MAN.name
+ it gonna print 
+"koshi"
+
+but if i want to change it then 
+
+setattr(obj,'name',"koshish dave")
+now it gonna print
+koshish dave 
+
